@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/x-icon" href="https://www.nike.com/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <title>New Releases</title>
+</head>
+<body>
+<div id="navbar"></div>
+
+
+    <script>
+  // Load navbar.html into the div
+    fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+      // Re-run feather icons after load (if you use feather icons)
+        if (window.feather) feather.replace();
+    });
+</script>
+</body>
+</html>

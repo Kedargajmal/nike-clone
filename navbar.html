@@ -1,0 +1,72 @@
+<!--------  Navbar --------->
+<nav class="navbar">
+      <div class="nav-container">
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img src="Images/Nike-Logo-PNG-HD-Quality.png" alt="Nike">
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="nav-links">
+
+        <div class="dropdown">
+          <button>New Releases</button>
+          <div class="dropdown-menu">
+            <a href="new-releases.html">All New Releases</a>
+            <a href="sneakers.html">Sneakers</a>
+            <a href="jackets.html">Jackets</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button>Men</button>
+          <div class="dropdown-menu">
+            <a href="men.html">All Men's</a>
+            <a href="men-shoes.html">Shoes</a>
+            <a href="men-clothing.html">Clothing</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button>Women</button>
+          <div class="dropdown-menu">
+            <a href="women.html">All Women's</a>
+            <a href="women-shoes.html">Shoes</a>
+            <a href="women-clothing.html">Clothing</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button>Kids</button>
+          <div class="dropdown-menu">
+            <a href="kids.html">All Kids</a>
+            <a href="kids-shoes.html">Shoes</a>
+            <a href="kids-clothing.html">Clothing</a>
+          </div>
+        </div>
+        <a href="index.html" style="text-decoration: none;">Home</a>
+      </div>
+
+      <!-- Right Side ke Icons-->
+      <div class="nav-icons">
+        <div class="search-bar">
+          <input type="text" placeholder="Search">
+          <button onclick="toggleSearch()"><i data-feather="search"></i></button>
+        </div>
+        <a href="cart.html"><i data-feather="shopping-bag"></i></a>
+        <a href="login.html"><i data-feather="user"></i></a>
+        <button class="menu-btn" onclick="toggleMobileMenu()"><i data-feather="menu"></i></button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu hidden">
+      <a href="new-releases.html">New Releases</a>
+      <a href="men.html">Men</a>
+      <a href="women.html">Women</a>
+      <a href="kids.html">Kids</a>
+      <a href="sale.html">Sale</a>
+      <a href="login.html">Account</a>
+      <a href="cart.html">Cart</a>
+    </div>
+</nav>

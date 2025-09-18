@@ -1,0 +1,157 @@
+[
+  {
+    "id": 1,
+    "name": "Nike Air Max 270",
+    "price": 12000,
+    "category": "men",
+    "type": "shoes",
+    "images": [
+      "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/fd47f05e-c92d-406f-9923-50c9ebfc38ce/NIKE+AVA+ROVER.png",
+      "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/907002b4-6c13-4d28-8d97-c1ec49e380e4/NIKE+AVA+ROVER.png",
+      "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7f90f9a5-2e10-48e1-b725-e52c5932b143/NIKE+AVA+ROVER.png",
+      "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/9cd954a6-1cb5-48ce-bc5a-96e2207cfd38/NIKE+AVA+ROVER.png"
+    ],
+    "sizes": ["7", "8", "9", "10", "11"],
+    "colors": ["Black", "White", "Red"]
+  },
+  {
+    "id": 2,
+    "name": "Nike Running Tee",
+    "price": 2500,
+    "category": "men",
+    "type": "clothing",
+    "images": ["images/tee1.jpg", "images/tee2.jpg"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["Blue", "Grey", "White"]
+  },
+  {
+    "id": 3,
+    "name": "Nike Sports Jacket",
+    "price": 6000,
+    "category": "men",
+    "type": "clothing",
+    "images": ["images/jacket-men1.jpg", "images/jacket-men2.jpg"],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["Black", "Green", "Grey"]
+  },
+  {
+    "id": 4,
+    "name": "Nike Zoom Fly",
+    "price": 14000,
+    "category": "men",
+    "type": "shoes",
+    "images": ["images/zoomfly1.jpg", "images/zoomfly2.jpg"],
+    "sizes": ["7", "8", "9", "10", "11"],
+    "colors": ["White", "Black", "Yellow"]
+  },
+  {
+    "id": 5,
+    "name": "Nike Jacket Women",
+    "price": 6000,
+    "category": "women",
+    "type": "clothing",
+    "images": ["images/jacket-women1.jpg", "images/jacket-women2.jpg"],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["Pink", "Black", "White"]
+  },
+  {
+    "id": 6,
+    "name": "Nike Air Force 1 Women",
+    "price": 13000,
+    "category": "women",
+    "type": "shoes",
+    "images": ["images/airforce-women1.jpg", "images/airforce-women2.jpg"],
+    "sizes": ["6", "7", "8", "9"],
+    "colors": ["White", "Pink", "Black"]
+  },
+  {
+    "id": 7,
+    "name": "Nike Running Leggings",
+    "price": 3500,
+    "category": "women",
+    "type": "clothing",
+    "images": ["images/leggings-women1.jpg", "images/leggings-women2.jpg"],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["Black", "Grey"]
+  },
+  {
+    "id": 8,
+    "name": "Nike Sports Bra",
+    "price": 2000,
+    "category": "women",
+    "type": "clothing",
+    "images": ["images/sportsbra1.jpg", "images/sportsbra2.jpg"],
+    "sizes": ["S", "M", "L"],
+    "colors": ["Red", "Black", "White"]
+  },
+  {
+    "id": 9,
+    "name": "Nike Kids Sneakers",
+    "price": 4000,
+    "category": "kids",
+    "type": "shoes",
+    "images": ["images/kids-sneakers1.jpg", "images/kids-sneakers2.jpg"],
+    "sizes": ["5", "6", "7"],
+    "colors": ["Red", "Blue", "Green"]
+  },
+  {
+    "id": 10,
+    "name": "Nike Kids Hoodie",
+    "price": 2500,
+    "category": "kids",
+    "type": "clothing",
+    "images": ["images/kids-hoodie1.jpg", "images/kids-hoodie2.jpg"],
+    "sizes": ["S", "M", "L"],
+    "colors": ["Blue", "Yellow", "Grey"]
+  },
+  {
+    "id": 11,
+    "name": "Nike Kids Shorts",
+    "price": 1500,
+    "category": "kids",
+    "type": "clothing",
+    "images": ["images/kids-shorts1.jpg", "images/kids-shorts2.jpg"],
+    "sizes": ["S", "M", "L"],
+    "colors": ["Black", "Blue"]
+  },
+  {
+    "id": 12,
+    "name": "Nike Sneaker Pro",
+    "price": 15000,
+    "category": "new",
+    "type": "sneakers",
+    "images": ["images/new-sneaker1.jpg", "images/new-sneaker2.jpg"],
+    "sizes": ["7", "8", "9", "10"],
+    "colors": ["Black", "White"]
+  },
+  {
+    "id": 13,
+    "name": "Nike Windbreaker Jacket",
+    "price": 7000,
+    "category": "new",
+    "type": "jackets",
+    "images": ["images/new-jacket1.jpg", "images/new-jacket2.jpg"],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["Blue", "Grey"]
+  },
+  {
+    "id": 14,
+    "name": "Nike Air Zoom Pegasus",
+    "price": 12000,
+    "category": "new",
+    "type": "shoes",
+    "images": ["images/new-pegasus1.jpg", "images/new-pegasus2.jpg"],
+    "sizes": ["7", "8", "9", "10"],
+    "colors": ["White", "Grey", "Black"]
+  },
+  {
+    "id": 15,
+    "name": "Nike Tech Fleece Hoodie",
+    "price": 6500,
+    "category": "new",
+    "type": "clothing",
+    "images": ["images/new-hoodie1.jpg", "images/new-hoodie2.jpg"],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["Black", "Red", "Grey"]
+  }
+]
