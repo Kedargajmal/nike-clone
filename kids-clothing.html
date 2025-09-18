@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kids Collection</title>
+  <title>Kids' Clothing</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="https://www.nike.com/favicon.ico">
   <style>
@@ -142,7 +142,7 @@ body {
 
   <!-- Product Section -->
   <main class="container">
-    <h1 class="page-title">Kids Collection</h1>
+    <h1 class="page-title">Kids' Clothing</h1>
     <div id="product-list" class="product-grid"></div>
   </main>
 
@@ -159,7 +159,8 @@ body {
     fetch("product.json")
       .then(res => res.json())
       .then(data => {
-        allProducts = data.filter(p => p.category === "kids"); // only kids
+        // Filter only kids clothing
+        allProducts = data.filter(p => p.category === "kids" && p.type === "clothing");
         displayedProducts = [...allProducts];
         renderProducts(displayedProducts);
       });
