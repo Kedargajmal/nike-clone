@@ -1,28 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Releases</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="https://www.nike.com/favicon.ico">
+  <style>
+    /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-    <link rel="icon" type="image/x-icon" href="https://www.nike.com/favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet"/>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <title>New Releases</title>
+body {
+  background: #f9f9f9;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Product Card */
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 1rem;
+}
+
+.product-info h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-weight: bold;
+  color: #e63946;
+  margin-bottom: 0.5rem;
+}
+
+.colors, .sizes {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background: #444;
+}
+
+/* Responsive Navbar Placeholder */
+#navbar {
+  margin-bottom: 1rem;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+.page-title {
+  text-align: center;
+  margin: 1rem 0 2rem;
+  font-size: 2rem;
+}
+
+/* Filter Section */
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  margin: 1rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.filter-section input[type="text"],
+.filter-section select {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  min-width: 180px;
+  flex: 1;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Product Card */
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 1rem;
+}
+
+.product-info h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-weight: bold;
+  color: #e63946;
+  margin-bottom: 0.5rem;
+}
+
+.colors, .sizes {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background: #444;
+}
+
+.no-results {
+  grid-column: 1/-1;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+}
+/* Product detail page */
+/* Product Detail Page */
+.product-detail-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 2rem auto;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.product-images {
+  flex: 1;
+  min-width: 320px;
+}
+
+.product-images img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.thumbnails img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border 0.3s;
+}
+
+.thumbnails img:hover {
+  border: 2px solid #000;
+}
+
+.product-detail-info {
+  flex: 1;
+  min-width: 320px;
+}
+
+.product-detail-info h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.product-detail-info p {
+  margin: 0.5rem 0;
+}
+
+  </style>
 </head>
 <body>
-<div id="navbar"></div>
+  <!-- Navbar -->
+  <div id="navbar"></div>
 
+  <!-- Search & Sort -->
+  <section class="filter-section">
+    <input type="text" id="searchInput" placeholder="🔍 Search product by name...">
+    <select id="sortSelect">
+      <option value="">Sort By</option>
+      <option value="name-asc">Name (A → Z)</option>
+      <option value="name-desc">Name (Z → A)</option>
+      <option value="price-asc">Price (Low → High)</option>
+      <option value="price-desc">Price (High → Low)</option>
+    </select>
+  </section>
 
-    <script>
-  // Load navbar.html into the div
+  <!-- Product Section -->
+  <main class="container">
+    <h1 class="page-title">New Releases</h1>
+    <div id="product-list" class="product-grid"></div>
+  </main>
+
+  <script>
+    // Load navbar.html
     fetch("navbar.html")
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("navbar").innerHTML = data;
-      // Re-run feather icons after load (if you use feather icons)
-        if (window.feather) feather.replace();
+      .then(response => response.text())
+      .then(data => document.getElementById("navbar").innerHTML = data);
+
+    let allProducts = [];
+    let displayedProducts = [];
+
+    // Fetch products from JSON
+    fetch("product.json")
+      .then(res => res.json())
+      .then(data => {
+        allProducts = data.filter(p => p.category === "new"); // only "new"
+        displayedProducts = [...allProducts];
+        renderProducts(displayedProducts);
+      });
+
+    const productContainer = document.getElementById("product-list");
+
+    // Render Function
+    function renderProducts(products) {
+      productContainer.innerHTML = "";
+
+      if (products.length === 0) {
+        productContainer.innerHTML = `<p class="no-results">No products found.</p>`;
+        return;
+      }
+
+      products.forEach(product => {
+        const card = document.createElement("div");
+        card.classList.add("product-card");
+
+        card.innerHTML = `
+          <div class="product-img">
+            <img src="${product.images[0]}" alt="${product.name}">
+          </div>
+          <div class="product-info">
+            <h2>${product.name}</h2>
+            <p class="price">₹${product.price.toLocaleString()}</p>
+            <button class="btn" onclick="viewProduct(${product.id})">View Details</button>
+          </div>
+        `;
+        productContainer.appendChild(card);
+      });
+    }
+
+    // ✅ Search Functionality
+    document.getElementById("searchInput").addEventListener("keyup", function() {
+      const searchValue = this.value.toLowerCase().trim();
+
+      displayedProducts = allProducts.filter(p =>
+        p.name.toLowerCase().includes(searchValue)
+      );
+
+      renderProducts(displayedProducts);
     });
-</script>
+
+    // ✅ Sort Functionality
+    document.getElementById("sortSelect").addEventListener("change", function() {
+      const value = this.value;
+
+      if (value === "name-asc") {
+        displayedProducts.sort((a, b) => a.name.localeCompare(b.name));
+      } else if (value === "name-desc") {
+        displayedProducts.sort((a, b) => b.name.localeCompare(a.name));
+      } else if (value === "price-asc") {
+        displayedProducts.sort((a, b) => a.price - b.price);
+      } else if (value === "price-desc") {
+        displayedProducts.sort((a, b) => b.price - a.price);
+      }
+
+      renderProducts(displayedProducts);
+    });
+
+    // ✅ Redirect to Product Page
+    function viewProduct(id) {
+      window.location.href = `product.html?id=${id}`;
+    }
+  </script>
 </body>
 </html>

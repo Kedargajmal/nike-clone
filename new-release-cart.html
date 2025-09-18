@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{
+      --bg:#f6f7f9;
+      --card:#fff;
+      --accent:#000;
+      --accent-2:#e63946;
+      --muted:#6b7280;
+      --radius:12px;
+      --shadow: 0 6px 20px rgba(2,6,23,0.08);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:#111827;font-family:inherit}
+
+    .wrap{max-width:1200px;margin:20px auto;padding:0 16px}
+    .topbar{
+      background:var(--card);
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      gap:14px;
+      box-shadow:0 1px 0 rgba(0,0,0,0.03);
+      margin-bottom:18px;
+    }
+    .back-link{font-size:14px;color:var(--accent);text-decoration:none}
+    .page-title{font-size:16px;font-weight:600;margin-left:10px;color:#111827}
+
+    .cart-list{display:grid;gap:14px}
+    .cart-item{
+      display:flex;
+      background:var(--card);
+      padding:12px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .cart-item img{width:100px;height:100px;object-fit:cover;border-radius:10px}
+    .item-info{flex:1;display:flex;flex-direction:column;gap:6px}
+    .item-name{font-weight:700;font-size:16px}
+    .item-meta{color:var(--muted);font-size:13px}
+    .item-price{color:var(--accent-2);font-weight:700;font-size:16px}
+
+    .qty-row{display:flex;align-items:center;gap:6px;margin-top:6px}
+    .qty-btn{width:28px;height:28px;border-radius:6px;border:1px solid #e5e7eb;background:white;cursor:pointer}
+    .qty-input{width:50px;text-align:center;border:1px solid #e5e7eb;border-radius:6px;padding:4px}
+
+    .remove-btn{background:transparent;border:none;color:var(--accent-2);font-weight:600;cursor:pointer;font-size:14px;margin-top:6px}
+
+    .totals{
+      margin-top:18px;
+      background:var(--card);
+      padding:18px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .totals div{display:flex;justify-content:space-between;font-size:16px}
+    .totals .grand-total{font-weight:700;font-size:18px;color:var(--accent-2)}
+
+    .btn-primary{
+      background:var(--accent);
+      color:white;
+      border:none;
+      padding:12px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:600;
+      text-align:center;
+      margin-top:10px;
+    }
+
+    .empty-cart{text-align:center;color:var(--muted);padding:60px;background:var(--card);border-radius:12px;box-shadow:var(--shadow)}
+
+    @media (max-width:768px){
+      .cart-item{flex-direction:column;align-items:flex-start}
+      .cart-item img{width:100%;height:auto}
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="back-link" href="new-releases.html">&larr; Continue Shopping</a>
+      <div class="page-title">Your Cart</div>
+    </div>
+
+    <div id="cartList" class="cart-list">
+      <!-- Cart items will be rendered here -->
+    </div>
+
+    <div id="totals" class="totals" style="display:none">
+      <div><span>Subtotal</span><span id="subtotal">₹0</span></div>
+      <div><span>Tax (5%)</span><span id="tax">₹0</span></div>
+      <div class="grand-total"><span>Total</span><span id="total">₹0</span></div>
+      <button class="btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <script>
+    const cartList = document.getElementById('cartList');
+    const subtotalEl = document.getElementById('subtotal');
+    const taxEl = document.getElementById('tax');
+    const totalEl = document.getElementById('total');
+    const totalsWrap = document.getElementById('totals');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+
+    function rupee(n){ return '₹'+Number(n).toLocaleString('en-IN'); }
+
+    function loadCart(){
+      const cart = JSON.parse(localStorage.getItem('cart')||'[]');
+      cartList.innerHTML = '';
+      if(!cart.length){
+        cartList.innerHTML = '<div class="empty-cart">Your cart is empty.</div>';
+        totalsWrap.style.display = 'none';
+        return;
+      }
+      totalsWrap.style.display = 'flex';
+      let subtotal = 0;
+
+      cart.forEach((item, idx)=>{
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <div class="item-info">
+            <div class="item-name">${item.name}</div>
+            <div class="item-meta">${item.size? 'Size: '+item.size : ''} ${item.color? ' | Color: '+item.color : ''}</div>
+            <div class="item-price">${rupee(item.price)}</div>
+            <div class="qty-row">
+              <button class="qty-btn" data-action="dec">−</button>
+              <input class="qty-input" type="number" min="1" value="${item.qty}">
+              <button class="qty-btn" data-action="inc">+</button>
+            </div>
+            <button class="remove-btn">Remove</button>
+          </div>
+        `;
+        cartList.appendChild(div);
+
+        subtotal += item.price * item.qty;
+
+        // quantity buttons
+        const decBtn = div.querySelector('[data-action="dec"]');
+        const incBtn = div.querySelector('[data-action="inc"]');
+        const qtyInput = div.querySelector('.qty-input');
+        const removeBtn = div.querySelector('.remove-btn');
+
+        decBtn.addEventListener('click', ()=>{
+          qtyInput.value = Math.max(1, Number(qtyInput.value)-1);
+          item.qty = Number(qtyInput.value);
+          saveCart();
+        });
+        incBtn.addEventListener('click', ()=>{
+          qtyInput.value = Number(qtyInput.value)+1;
+          item.qty = Number(qtyInput.value);
+          saveCart();
+        });
+        qtyInput.addEventListener('change', ()=>{
+          let v = Math.max(1, Number(qtyInput.value)||1);
+          qtyInput.value = v;
+          item.qty = v;
+          saveCart();
+        });
+        removeBtn.addEventListener('click', ()=>{
+          cart.splice(idx,1);
+          saveCart();
+        });
+      });
+
+      const tax = Math.round(subtotal*0.05);
+      const total = subtotal + tax;
+
+      subtotalEl.textContent = rupee(subtotal);
+      taxEl.textContent = rupee(tax);
+      totalEl.textContent = rupee(total);
+
+      function saveCart(){
+        localStorage.setItem('cart', JSON.stringify(cart));
+        loadCart();
+      }
+    }
+
+    checkoutBtn.addEventListener('click', ()=>{
+      alert('Proceeding to checkout! Cart saved in localStorage.');
+      // You can redirect to a real checkout page if exists
+      // window.location.href = 'checkout.html';
+    });
+
+    loadCart();
+    
+     // Load navbar.html into the div
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+      // Re-run feather icons after load (if you use feather icons)
+      if (window.feather) feather.replace();
+    });
+  </script>
+</body>
+</html>

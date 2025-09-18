@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Product Details</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root{
+      --bg:#f6f7f9;
+      --card:#fff;
+      --accent:#000;
+      --accent-2:#e63946;
+      --muted:#6b7280;
+      --radius:12px;
+      --shadow: 0 6px 20px rgba(2,6,23,0.08);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:#111827;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Header / Breadcrumb */
+    .topbar{
+      background:var(--card);
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      gap:14px;
+      box-shadow:0 1px 0 rgba(0,0,0,0.03);
+    }
+    .back-link{
+      font-size:14px;
+      color:var(--accent);
+      text-decoration:none;
+    }
+    .page-title{margin:0;font-weight:600;font-size:16px;color:#111827}
+
+    /* Main container */
+    .wrap{
+      max-width:1200px;
+      margin:22px auto;
+      padding:0 16px;
+    }
+
+    /* Product area */
+    .product-grid{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:24px;
+      align-items:start;
+    }
+
+    /* Image gallery card */
+    .gallery{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .viewer{
+      position:relative;
+      width:100%;
+      min-height:360px;
+      border-radius:10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      background:#eef2f6;
+    }
+    .viewer img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
+    .arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      background:rgba(0,0,0,0.6);
+      color:white;
+      border:none;
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      font-size:20px;
+      transition:background .15s;
+    }
+    .arrow:hover{background:rgba(0,0,0,0.85)}
+    .arrow.left{left:10px}
+    .arrow.right{right:10px}
+
+    .thumbs{
+      display:flex;
+      gap:10px;
+      overflow:auto;
+      padding-bottom:4px;
+    }
+    .thumbs img{
+      width:72px;
+      height:72px;
+      object-fit:cover;
+      border-radius:8px;
+      border:2px solid transparent;
+      cursor:pointer;
+      flex:0 0 auto;
+    }
+    .thumbs img.active{border-color:var(--accent)}
+
+    /* Info card */
+    .info{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .product-name{font-size:20px;font-weight:700;margin:2px 0}
+    .meta{font-size:13px;color:var(--muted)}
+    .price{font-size:22px;color:var(--accent-2);font-weight:700;margin-top:6px}
+
+    .selectors{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+    .sizes .title,.colors .title{font-size:13px;color:var(--muted);margin-bottom:6px;display:block}
+
+    .size-btn, .color-swatch{
+      border:1px solid #e5e7eb;
+      background:white;
+      padding:8px 12px;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:14px;
+      transition:all .12s;
+    }
+    .size-btn.selected{border-color:var(--accent);box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+    .color-swatch{
+      width:36px;height:36px;padding:0;border-radius:8px;
+      display:inline-flex;align-items:center;justify-content:center;
+    }
+    .color-swatch.selected{outline:3px solid rgba(0,0,0,0.08); transform:scale(1.05)}
+
+    .qty-row{display:flex;align-items:center;gap:8px;margin-top:6px}
+    .qty-btn{width:36px;height:36px;border-radius:8px;border:1px solid #e5e7eb;background:white;cursor:pointer}
+    .qty-input{width:60px;text-align:center;padding:8px;border-radius:8px;border:1px solid #e5e7eb}
+
+    .actions{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+    .btn{
+      padding:12px 16px;border-radius:10px;border:none;cursor:pointer;font-weight:600;
+      box-shadow:0 6px 15px rgba(2,6,23,0.06);
+    }
+    .btn.primary{background:var(--accent);color:white}
+    .btn.ghost{background:transparent;border:1px solid #e5e7eb;color:var(--accent)}
+
+    .desc{background:var(--card);padding:14px;border-radius:12px;margin-top:18px;color:var(--muted);line-height:1.5}
+
+    /* Related */
+    .related{
+      margin-top:18px;
+    }
+    .related h3{margin:6px 0 10px;font-size:16px}
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+    .rel-card{background:var(--card);padding:10px;border-radius:10px;text-align:center;box-shadow:var(--shadow)}
+    .rel-card img{width:100%;height:110px;object-fit:cover;border-radius:8px}
+    .rel-card .r-name{font-size:13px;margin-top:8px;min-height:36px}
+    .rel-price{font-weight:700;color:var(--accent-2);margin-top:6px}
+
+    /* Toast */
+    .toast{
+      position:fixed;right:18px;bottom:18px;background:#111827;color:white;padding:12px 16px;border-radius:10px;box-shadow:0 8px 30px rgba(2,6,23,0.2);opacity:0;transform:translateY(10px);transition:opacity .22s,transform .22s;
+      z-index:9999;
+    }
+    .toast.show{opacity:1;transform:none}
+
+    /* small screens */
+    @media (max-width: 980px){
+      .product-grid{grid-template-columns:1fr;gap:18px}
+      .info{order:2}
+      .gallery{order:1}
+    }
+    @media (max-width:480px){
+      .viewer{min-height:260px}
+      .thumbs img{width:60px;height:60px}
+      .product-name{font-size:18px}
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <!-- top bar -->
+  <div class="topbar">
+    <a class="back-link" href="new-releases.html">&larr; Back to New Releases</a>
+    <div style="flex:1"></div>
+    <div class="page-title">Product Details</div>
+  </div>
+
+  <div class="wrap">
+    <div id="productArea" class="product-grid">
+      <!-- left: gallery -->
+      <section class="gallery" id="galleryCard" aria-label="Image gallery">
+        <div class="viewer" id="viewer">
+          <button class="arrow left" id="prevBtn" aria-label="Previous image">&#10094;</button>
+          <img id="mainImage" src="" alt="Product image">
+          <button class="arrow right" id="nextBtn" aria-label="Next image">&#10095;</button>
+        </div>
+        <div class="thumbs" id="thumbs" aria-label="Thumbnails"></div>
+      </section>
+
+      <!-- right: info -->
+      <aside class="info" id="infoCard">
+        <div>
+          <div class="product-name" id="productName">Loading…</div>
+          <div class="meta" id="metaInfo">Category • Type</div>
+          <div class="price" id="price">₹0</div>
+        </div>
+
+        <div style="display:flex;gap:10px;align-items:center;justify-content:space-between">
+          <div style="display:flex;flex-direction:column">
+            <div class="sizes">
+              <span class="title">Select Size</span>
+              <div id="sizesWrap" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column">
+            <div class="colors">
+              <span class="title">Select Color</span>
+              <div id="colorsWrap" style="display:flex;gap:8px;align-items:center"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="qty-row">
+          <span class="title" style="font-size:13px;color:var(--muted);margin-right:8px">Quantity</span>
+          <button class="qty-btn" id="qtyDec" aria-label="Decrease quantity">−</button>
+          <input class="qty-input" id="qtyInput" type="number" min="1" value="1" />
+          <button class="qty-btn" id="qtyInc" aria-label="Increase quantity">+</button>
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" id="addToCartBtn">Add to Cart</button>
+          <button class="btn ghost" id="buyNowBtn">Buy Now</button>
+        </div>
+
+        <div class="desc" id="descBox">
+          <!-- product description -->
+        </div>
+
+        <div class="related" id="relatedWrap">
+          <h3>Related Products</h3>
+          <div class="related-grid" id="relatedGrid"></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">Added to cart</div>
+
+  <script>
+    // helpers
+    const $ = sel => document.querySelector(sel);
+    const $$ = sel => Array.from(document.querySelectorAll(sel));
+
+    function showToast(text){
+      const t = document.getElementById('toast');
+      t.textContent = text;
+      t.classList.add('show');
+      clearTimeout(t._timer);
+      t._timer = setTimeout(()=> t.classList.remove('show'), 2000);
+    }
+
+    function rupee(n){
+      try { return '₹' + Number(n).toLocaleString('en-IN'); }
+      catch(e) { return '₹' + n; }
+    }
+
+    // main
+    (function(){
+      const params = new URLSearchParams(window.location.search);
+      const id = parseInt(params.get('id'));
+      const mainImage = document.getElementById('mainImage');
+      const thumbs = document.getElementById('thumbs');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const productNameEl = document.getElementById('productName');
+      const metaInfo = document.getElementById('metaInfo');
+      const priceEl = document.getElementById('price');
+      const sizesWrap = document.getElementById('sizesWrap');
+      const colorsWrap = document.getElementById('colorsWrap');
+      const qtyInput = document.getElementById('qtyInput');
+      const qtyDec = document.getElementById('qtyDec');
+      const qtyInc = document.getElementById('qtyInc');
+      const addToCartBtn = document.getElementById('addToCartBtn');
+      const buyNowBtn = document.getElementById('buyNowBtn');
+      const descBox = document.getElementById('descBox');
+      const relatedGrid = document.getElementById('relatedGrid');
+
+      let product = null;
+      let currentIndex = 0;
+
+      fetch('product.json')
+        .then(r => r.json())
+        .then(data => {
+          // find product by id
+          product = data.find(p => Number(p.id) === Number(id));
+          if(!product){
+            document.getElementById('productArea').innerHTML = '<div style="padding:40px;background:white;border-radius:12px;text-align:center">Product not found. <br><a href="new-release.html">Back to list</a></div>';
+            return;
+          }
+
+          // fill top details
+          productNameEl.textContent = product.name || 'Unnamed product';
+          metaInfo.textContent = (product.category ? product.category : '') + (product.type ? ' • ' + product.type : '');
+          priceEl.textContent = rupee(product.price ?? 0);
+          descBox.textContent = product.description ?? 'No description available for this product.';
+
+          // images
+          const imgs = Array.isArray(product.images) && product.images.length ? product.images : ['https://via.placeholder.com/600'];
+          currentIndex = 0;
+          mainImage.src = imgs[currentIndex];
+
+          // build thumbs
+          thumbs.innerHTML = '';
+          imgs.forEach((src, i) => {
+            const im = document.createElement('img');
+            im.src = src;
+            im.alt = product.name + ' image ' + (i+1);
+            if(i === currentIndex) im.classList.add('active');
+            im.addEventListener('click', ()=> {
+              currentIndex = i;
+              updateGallery();
+            });
+            thumbs.appendChild(im);
+          });
+
+          // sizes
+          sizesWrap.innerHTML = '';
+          if(Array.isArray(product.sizes) && product.sizes.length){
+            product.sizes.forEach(s => {
+              const b = document.createElement('button');
+              b.className = 'size-btn';
+              b.textContent = s;
+              b.addEventListener('click', ()=> {
+                $$('.size-btn').forEach(x => x.classList.remove('selected'));
+                b.classList.add('selected');
+                b.setAttribute('data-selected','true');
+              });
+              sizesWrap.appendChild(b);
+            });
+          } else {
+            sizesWrap.innerHTML = '<span class="meta">Size not applicable</span>';
+          }
+
+          // colors
+          colorsWrap.innerHTML = '';
+          if(Array.isArray(product.colors) && product.colors.length){
+            product.colors.forEach(c => {
+              const sw = document.createElement('button');
+              sw.className = 'color-swatch';
+              sw.title = c;
+              sw.setAttribute('aria-label','Color ' + c);
+              // try to set background if color string is a color name or hex
+              try { sw.style.background = c.toLowerCase(); }
+              catch(e){ sw.style.background = '#ddd'; }
+              sw.addEventListener('click', ()=>{
+                $$('.color-swatch').forEach(x => x.classList.remove('selected'));
+                sw.classList.add('selected');
+                sw.setAttribute('data-selected','true');
+              });
+              colorsWrap.appendChild(sw);
+
+              // also put color name next to swatch on small screens if needed
+            });
+          } else {
+            colorsWrap.innerHTML = '<span class="meta">Color not applicable</span>';
+          }
+
+          // related products: same category or type, exclude self
+          const related = data.filter(p => p.id !== product.id)
+                              .filter(p => p.category === product.category || p.type === product.type)
+                              .slice(0,6);
+          relatedGrid.innerHTML = '';
+          related.forEach(rp => {
+            const c = document.createElement('div');
+            c.className = 'rel-card';
+            c.innerHTML = `
+              <img src="${(rp.images && rp.images[0]) ? rp.images[0] : 'https://via.placeholder.com/300'}" alt="${rp.name}">
+              <div class="r-name">${rp.name}</div>
+              <div class="rel-price">${rupee(rp.price)}</div>
+              <div style="margin-top:8px">
+                <button class="btn ghost" data-id="${rp.id}" style="padding:8px 10px;font-size:13px">View</button>
+              </div>
+            `;
+            relatedGrid.appendChild(c);
+            c.querySelector('button').addEventListener('click', ()=> {
+              // navigate to product page for that id
+              window.location.href = `product.html?id=${rp.id}`;
+            });
+          });
+
+        })
+        .catch(err => {
+          console.error(err);
+          document.getElementById('productArea').innerHTML = '<div style="padding:40px;background:white;border-radius:12px;text-align:center">Failed to load product data.</div>';
+        });
+
+      // gallery controls
+      function updateGallery(){
+        fetch('product.json')
+          .then(r => r.json())
+          .then(data => {
+            const p = data.find(p => Number(p.id) === Number(id));
+            const imgs = Array.isArray(p.images) && p.images.length ? p.images : ['https://via.placeholder.com/600'];
+            currentIndex = (currentIndex + imgs.length) % imgs.length;
+            mainImage.src = imgs[currentIndex];
+            // update active thumb
+            const tImgs = Array.from(thumbs.querySelectorAll('img'));
+            tImgs.forEach((ti, i) => ti.classList.toggle('active', i === currentIndex));
+          });
+      }
+      prevBtn.addEventListener('click', ()=>{
+        currentIndex--;
+        updateGallery();
+      });
+      nextBtn.addEventListener('click', ()=>{
+        currentIndex++;
+        updateGallery();
+      });
+
+      // keyboard nav
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'ArrowLeft'){ currentIndex--; updateGallery(); }
+        if(e.key === 'ArrowRight'){ currentIndex++; updateGallery(); }
+      });
+
+      // quantity controls
+      qtyDec.addEventListener('click', ()=> {
+        qtyInput.value = Math.max(1, Number(qtyInput.value) - 1);
+      });
+      qtyInc.addEventListener('click', ()=> {
+        qtyInput.value = Math.max(1, Number(qtyInput.value) + 1);
+      });
+
+      // add to cart
+      addToCartBtn.addEventListener('click', ()=> {
+        const selectedSizeBtn = $('.size-btn.selected');
+        const selectedColorBtn = $('.color-swatch.selected');
+
+        const selectedSize = selectedSizeBtn ? selectedSizeBtn.textContent : null;
+        const selectedColor = selectedColorBtn ? selectedColorBtn.title || null : null;
+
+        if((product.sizes && product.sizes.length) && !selectedSize){
+          showToast('Please select a size');
+          return;
+        }
+        if((product.colors && product.colors.length) && !selectedColor){
+          showToast('Please select a color');
+          return;
+        }
+
+        const qty = Math.max(1, Number(qtyInput.value) || 1);
+
+        // build cart item
+        const item = {
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          size: selectedSize,
+          color: selectedColor,
+          qty,
+          image: (product.images && product.images[0]) ? product.images[0] : ''
+        };
+
+        const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+
+        // merge if same (id+size+color)
+        const match = cart.find(ci => ci.id === item.id && ci.size === item.size && ci.color === item.color);
+        if(match){
+          match.qty = (match.qty || 0) + item.qty;
+        } else {
+          cart.push(item);
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        showToast('Added to cart');
+      });
+
+      // buy now
+      buyNowBtn.addEventListener('click', ()=> {
+        // perform the same validation & add to cart, then redirect to cart page (if exists)
+        addToCartBtn.click();
+        // attempt redirect to cart.html else show message
+        try {
+          window.location.href = 'new-release-cart.html';
+        } catch(e){
+          showToast('Proceed to checkout (cart) — cart saved in localStorage.');
+        }
+      });
+
+    })();
+     // Load navbar.html into the div
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+      // Re-run feather icons after load (if you use feather icons)
+      if (window.feather) feather.replace();
+    });
+  </script>
+</body>
+</html>
