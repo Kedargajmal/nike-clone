@@ -1,6 +1,42 @@
 [
   {
     "id": 1,
+    "name": "Air Jordan 1 Low SE",
+    "price": 11495.00,
+    "category": "men",
+    "type": "shoes",
+    "images": [
+      "Images/AIR+JORDAN+1+LOW+SE%20(1).avif",
+      "Images/AIR+JORDAN+1+LOW+SE%20(2).avif",
+      "Images/AIR+JORDAN+1+LOW+SE%20(4).avif",
+      "Images/AIR+JORDAN+1+LOW+SE%20(5).avif",
+      "Images/AIR+JORDAN+1+LOW+SE%20(6).avif",
+      "Images/AIR+JORDAN+1+LOW+SE%20(7).avif"
+    ],
+    "sizes": ["7", "8", "9", "10", "11"],
+    "colors": ["Black", "White", "Red"]
+  },
+  {
+    "id": 2,
+    "name": "Air Jordan 4 RM",
+    "price":  12157.00,
+    "category": "men",
+    "type": "shoes",
+    "images": [
+      "Images/AIR+JORDAN+4+RM.avif",
+      "Images/AIR+JORDAN+4+RM (1).avif",
+      "Images/AIR+JORDAN+4+RM (2).avif",
+      "Images/AIR+JORDAN+4+RM (3).avif",
+      "Images/AIR+JORDAN+4+RM (4).avif",
+      "Images/AIR+JORDAN+4+RM (5).avif",
+      "Images/AIR+JORDAN+4+RM (6).avif",
+      "Images/AIR+JORDAN+4+RM (7).avif"
+  ],
+    "sizes": ["7", "8", "9", "10", "11"],
+    "colors": ["White", "Black", "Yellow"]
+  },
+  {
+    "id": 3,
     "name": "Nike Air Max 270",
     "price": 12000,
     "category": "men",
@@ -15,35 +51,265 @@
     "colors": ["Black", "White", "Red"]
   },
   {
-    "id": 2,
-    "name": "Nike Running Tee",
-    "price": 2500,
+    "id": 4,
+    "name": "Jordan CMFT Era",
+    "price": 10795.00,
+    "category": "men",
+    "type": "shoes",
+    "images": [
+      "Images/JORDAN+CMFT+ERA.avif",
+      "Images/JORDAN+CMFT+ERA (1).avif",
+      "Images/JORDAN+CMFT+ERA (2).avif",
+      "Images/JORDAN+CMFT+ERA (3).avif",
+      "Images/JORDAN+CMFT+ERA (4).avif",
+      "Images/JORDAN+CMFT+ERA (5).avif",
+      "Images/JORDAN+CMFT+ERA (6).avif",
+      "Images/JORDAN+CMFT+ERA (7).avif"
+  ],
+    "sizes": ["7", "8", "9", "10", "11"],
+    "colors": ["White", "Black", "Yellow"]
+  },
+  {
+    "id": 5,
+    "name": "Nike Big Low",
+    "price":  7495.00,
+    "category": "men",
+    "type": "shoes",
+    "images": [
+      "Images/BIG+NIKE+LOW.avif",
+      "Images/BIG+NIKE+LOW (1).avif",
+      "Images/BIG+NIKE+LOW (2).avif",
+      "Images/BIG+NIKE+LOW (3).avif",
+      "Images/BIG+NIKE+LOW (4).avif",
+      "Images/BIG+NIKE+LOW (5).avif",
+      "Images/BIG+NIKE+LOW (6).avif"
+    ],
+    "sizes": ["7", "8", "9", "10", "11"],
+    "colors": ["Black", "White", "Red"]
+  },
+  {
+    "id": 6,
+    "name": "Air Jordan 1 Retro High OG",
+    "price":  16995.00,
+    "category": "men",
+    "type": "shoes",
+    "images": [
+      "Images/WMNS+AIR+JORDAN+1+RETRO+HI+OG.avif",
+      "Images/WMNS+AIR+JORDAN+1+RETRO+HI+OG (1).avif",
+      "Images/WMNS+AIR+JORDAN+1+RETRO+HI+OG (2).avif",
+      "Images/WMNS+AIR+JORDAN+1+RETRO+HI+OG (3).avif",
+      "Images/WMNS+AIR+JORDAN+1+RETRO+HI+OG (4).avif",
+      "Images/WMNS+AIR+JORDAN+1+RETRO+HI+OG (5).avif",
+      "Images/WMNS+AIR+JORDAN+1+RETRO+HI+OG (6).avif",
+      "Images/WMNS+AIR+JORDAN+1+RETRO+HI+OG (7).avif"
+    ],
+    "sizes": ["7", "8", "9", "10", "11"],
+    "colors": ["Sliver"]
+  },
+  {
+    "id": 7,
+    "name": "Jordan Access",
+    "price":  9195.00,
+    "category": "men",
+    "type": "shoes",
+    "images": [
+      "Images/JORDAN+ACCESS.avif",
+      "Images/JORDAN+ACCESS (1).avif",
+      "Images/JORDAN+ACCESS (2).avif",
+      "Images/JORDAN+ACCESS (3).avif",
+      "Images/JORDAN+ACCESS (4).avif",
+      "Images/JORDAN+ACCESS (5).avif",
+      "Images/JORDAN+ACCESS (6).avif"
+    ],
+    "sizes": ["7", "8", "9", "10", "11"],
+    "colors": ["Black", "White", "Red"]
+  },
+  {
+    "id": 8,
+    "name": "Air Jordan 1 Low G",
+    "price":  12995.00,
+    "category": "men",
+    "type": "shoes",
+    "images": [
+      "Images/AIR+JORDAN+1+LOW+G.avif",
+      "Images/AIR+JORDAN+1+LOW+G (1).avif",
+      "Images/AIR+JORDAN+1+LOW+G (2).avif",
+      "Images/AIR+JORDAN+1+LOW+G (3).avif",
+      "Images/AIR+JORDAN+1+LOW+G (4).avif",
+      "Images/AIR+JORDAN+1+LOW+G (5).avif",
+      "Images/AIR+JORDAN+1+LOW+G (6).avif"
+    ],
+    "sizes": ["7", "8", "9", "10", "11"],
+    "colors": ["Black", "White", "Red"]
+  },
+
+
+
+
+
+  {
+    "id": 9,
+    "name": "Nike Air",
+    "price": 5495.00,
     "category": "men",
     "type": "clothing",
-    "images": ["images/tee1.jpg", "images/tee2.jpg"],
+    "images": [
+      "Images/AS+M+NIKE+AIR+WOVEN+TRACK+JACK.avif",
+      "Images/AS+M+NIKE+AIR+WOVEN+TRACK+JACK (1).avif",
+      "Images/AS+M+NIKE+AIR+WOVEN+TRACK+JACK (2).avif",
+      "Images/AS+M+NIKE+AIR+WOVEN+TRACK+JACK (3).avif",
+      "Images/AS+M+NIKE+AIR+WOVEN+TRACK+JACK (4).avif",
+      "Images/AS+M+NIKE+AIR+WOVEN+TRACK+JACK (5).avif",
+      "Images/AS+M+NIKE+AIR+WOVEN+TRACK+JACK (6).avif",
+      "Images/AS+M+NIKE+AIR+WOVEN+TRACK+JACK (7).avif"
+    ],
     "sizes": ["S", "M", "L", "XL", "XXL"],
     "colors": ["Blue", "Grey", "White"]
   },
   {
-    "id": 3,
-    "name": "Nike Sports Jacket",
+    "id": 10,
+    "name": "Jordan Brooklyn",
     "price": 6000,
     "category": "men",
     "type": "clothing",
-    "images": ["images/jacket-men1.jpg", "images/jacket-men2.jpg"],
+    "images": [
+      "Images/M+J+BRK+DRAFT+JKT+AOP.avif",
+      "Images/M+J+BRK+DRAFT+JKT+AOP (1).avif",
+      "Images/M+J+BRK+DRAFT+JKT+AOP (2).avif",
+      "Images/M+J+BRK+DRAFT+JKT+AOP (3).avif",
+      "Images/M+J+BRK+DRAFT+JKT+AOP (4).avif",
+      "Images/M+J+BRK+DRAFT+JKT+AOP (5).avif",
+      "Images/M+J+BRK+DRAFT+JKT+AOP (6).avif",
+      "Images/M+J+BRK+DRAFT+JKT+AOP (7).avif"
+    ],
     "sizes": ["S", "M", "L", "XL"],
     "colors": ["Black", "Green", "Grey"]
   },
   {
-    "id": 4,
-    "name": "Nike Zoom Fly",
-    "price": 14000,
+    "id": 11,
+    "name": "Nike Club",
+    "price": 5995.00,
     "category": "men",
-    "type": "shoes",
-    "images": ["images/zoomfly1.jpg", "images/zoomfly2.jpg"],
-    "sizes": ["7", "8", "9", "10", "11"],
-    "colors": ["White", "Black", "Yellow"]
+    "type": "clothing",
+    "images": [
+      "Images/AS+M+NK+CLUB+HD+JACKET+OPP1.avif",
+      "Images/AS+M+NK+CLUB+HD+JACKET+OPP1 (1).avif",
+      "Images/AS+M+NK+CLUB+HD+JACKET+OPP1 (2).avif",
+      "Images/AS+M+NK+CLUB+HD+JACKET+OPP1 (3).avif",
+      "Images/AS+M+NK+CLUB+HD+JACKET+OPP1 (4).avif"
+    ],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["Blue", "Grey", "White"]
   },
+  {
+    "id": 12,
+    "name": "Kobe",
+    "price": 6995.00,
+    "category": "men",
+    "type": "clothing",
+    "images": [
+      "Images/AS+KB+M+LT+WT+WVN+JKT.avif",
+      "Images/AS+KB+M+LT+WT+WVN+JKT (1).avif",
+      "Images/AS+KB+M+LT+WT+WVN+JKT (2).avif",
+      "Images/AS+KB+M+LT+WT+WVN+JKT (3).avif",
+      "Images/AS+KB+M+LT+WT+WVN+JKT (4).avif",
+      "Images/AS+KB+M+LT+WT+WVN+JKT (5).avif"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["Black", "Green", "Grey"]
+  },
+  {
+    "id": 13,
+    "name": "Nike Tech Windrunner",
+    "price":  8995.00,
+    "category": "men",
+    "type": "clothing",
+    "images": [
+      "Images/AS+M+NK+DF+TCH+WVN+WR+FZ+JKT.avif",
+      "Images/AS+M+NK+DF+TCH+WVN+WR+FZ+JKT (1).avif",
+      "Images/AS+M+NK+DF+TCH+WVN+WR+FZ+JKT (2).avif",
+      "Images/AS+M+NK+DF+TCH+WVN+WR+FZ+JKT (3).avif",
+      "Images/AS+M+NK+DF+TCH+WVN+WR+FZ+JKT (4).avif",
+      "Images/AS+M+NK+DF+TCH+WVN+WR+FZ+JKT (5).avif"
+    ],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["Blue", "Grey", "White"]
+  },
+  {
+    "id": 14,
+    "name": "Nike Club Tracksuit Jacket",
+    "price": 6000,
+    "category": "men",
+    "type": "clothing",
+    "images": [
+      "Images/AS+M+NK+CLUB+WVN+TRK+JKT+OS.avif",
+      "Images/AS+M+NK+CLUB+WVN+TRK+JKT+OS (1).avif",
+      "Images/AS+M+NK+CLUB+WVN+TRK+JKT+OS (2).avif",
+      "Images/AS+M+NK+CLUB+WVN+TRK+JKT+OS (3).avif",
+      "Images/AS+M+NK+CLUB+WVN+TRK+JKT+OS (4).avif",
+      "Images/AS+M+NK+CLUB+WVN+TRK+JKT+OS (5).avif"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["Black", "Green", "Grey"]
+  },
+  {
+    "id": 15,
+    "name": "Nike Club",
+    "price": 5459.00,
+    "category": "men",
+    "type": "clothing",
+    "images": [
+      "Images/AS+M+NK+CLUB+WVN+TRK+SUIT.avif",
+      "Images/AS+M+NK+CLUB+WVN+TRK+SUIT (1).avif",
+      "Images/AS+M+NK+CLUB+WVN+TRK+SUIT (2).avif",
+      "Images/AS+M+NK+CLUB+WVN+TRK+SUIT (3).avif",
+      "Images/AS+M+NK+CLUB+WVN+TRK+SUIT (4).avif",
+      "Images/AS+M+NK+CLUB+WVN+TRK+SUIT (5).avif"
+    ],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["Blue", "Grey", "White"]
+  },
+  {
+    "id": 16,
+    "name": "Nike Total 90",
+    "price":  3695.00,
+    "category": "men",
+    "type": "clothing",
+    "images": [
+      "Images/AS+M+NK+DF+T90+SS+JSY.avif",
+      "Images/AS+M+NK+DF+T90+SS+JSY (1).avif",
+      "Images/AS+M+NK+DF+T90+SS+JSY (2).avif",
+      "Images/AS+M+NK+DF+T90+SS+JSY (3).avif",
+      "Images/AS+M+NK+DF+T90+SS+JSY (4).avif",
+      "Images/AS+M+NK+DF+T90+SS+JSY (5).avif"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": ["Black", "Green", "Grey"]
+  },
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   {
     "id": 5,
     "name": "Nike Jacket Women",
