@@ -311,45 +311,263 @@
 
 
   {
-    "id": 5,
-    "name": "Nike Jacket Women",
-    "price": 6000,
+    "id": 17,
+    "name": "Nike 24.7 ImpossiblySoft",
+    "price": 5695.00,
     "category": "women",
     "type": "clothing",
-    "images": ["images/jacket-women1.jpg", "images/jacket-women2.jpg"],
+    "images": [
+      "Images/AS+W+NK+24.7+DF+HZ+TOP+SOFT.avif",
+      "Images/AS+W+NK+24.7+DF+HZ+TOP+SOFT (1).avif",
+      "Images/AS+W+NK+24.7+DF+HZ+TOP+SOFT (2).avif",
+      "Images/AS+W+NK+24.7+DF+HZ+TOP+SOFT (3).avif",
+      "Images/AS+W+NK+24.7+DF+HZ+TOP+SOFT (4).avif",
+      "Images/AS+W+NK+24.7+DF+HZ+TOP+SOFT (5).avif"
+    ],
     "sizes": ["S", "M", "L", "XL"],
     "colors": ["Pink", "Black", "White"]
   },
   {
-    "id": 6,
-    "name": "Nike Air Force 1 Women",
-    "price": 13000,
+    "id": 18,
+    "name": "Nike Sportswear Phoenix Fleece",
+    "price": 3995.00,
     "category": "women",
-    "type": "shoes",
-    "images": ["images/airforce-women1.jpg", "images/airforce-women2.jpg"],
+    "type": "clothing",
+    "images": [
+      "Images/AS+W+NSW+PHNX+FLC+FT+HR+PANT+W.avif",
+      "Images/AS+W+NSW+PHNX+FLC+FT+HR+PANT+W (1).avif",
+      "Images/AS+W+NSW+PHNX+FLC+FT+HR+PANT+W (2).avif",
+      "Images/AS+W+NSW+PHNX+FLC+FT+HR+PANT+W (3).avif",
+      "Images/AS+W+NSW+PHNX+FLC+FT+HR+PANT+W (4).avif"
+    ],
     "sizes": ["6", "7", "8", "9"],
     "colors": ["White", "Pink", "Black"]
   },
   {
-    "id": 7,
-    "name": "Nike Running Leggings",
-    "price": 3500,
+    "id": 19,
+    "name": "Nike Swift",
+    "price": 4495.00,
     "category": "women",
     "type": "clothing",
-    "images": ["images/leggings-women1.jpg", "images/leggings-women2.jpg"],
+    "images": [
+      "Images/AS+W+NK+SWIFT+DF+FZ+MDLYR.avif",
+      "Images/AS+W+NK+SWIFT+DF+FZ+MDLYR (1).avif",
+      "Images/AS+W+NK+SWIFT+DF+FZ+MDLYR (2).avif",
+      "Images/AS+W+NK+SWIFT+DF+FZ+MDLYR (3).avif",
+      "Images/AS+W+NK+SWIFT+DF+FZ+MDLYR (4).avif",
+      "Images/AS+W+NK+SWIFT+DF+FZ+MDLYR (5).avif",
+      "Images/AS+W+NK+SWIFT+DF+FZ+MDLYR (6).avif",
+      "Images/AS+W+NK+SWIFT+DF+FZ+MDLYR (7).avif"
+    ],
     "sizes": ["S", "M", "L", "XL"],
     "colors": ["Black", "Grey"]
   },
   {
-    "id": 8,
-    "name": "Nike Sports Bra",
-    "price": 2000,
+    "id": 20,
+    "name": "NNike Sportswear Essential",
+    "price": 1895.00,
     "category": "women",
     "type": "clothing",
-    "images": ["images/sportsbra1.jpg", "images/sportsbra2.jpg"],
+    "images": [
+      "Images/AS+W+NSW+ESSNTL+SS+POLO+CRP+TO.avif",
+      "Images/AS+W+NSW+ESSNTL+SS+POLO+CRP+TO (1).avif",
+      "Images/AS+W+NSW+ESSNTL+SS+POLO+CRP+TO (2).avif",
+      "Images/AS+W+NSW+ESSNTL+SS+POLO+CRP+TO (3).avif",
+      "Images/AS+W+NSW+ESSNTL+SS+POLO+CRP+TO (4).avif",
+      "Images/AS+W+NSW+ESSNTL+SS+POLO+CRP+TO (5).avif"
+    ],
+    "sizes": ["6", "7", "8", "9"],
+    "colors": ["White", "Pink", "Black"]
+  },
+  {
+    "id": 21,
+    "name": "Nike Strike",
+    "price": 2995.00,
+    "category": "women",
+    "type": "clothing",
+    "images": [
+      "Images/AS+W+NK+DF+STRIKE+SS+TOP+K.avif",
+      "Images/AS+W+NK+DF+STRIKE+SS+TOP+K (1).avif",
+      "Images/AS+W+NK+DF+STRIKE+SS+TOP+K (2).avif",
+      "Images/AS+W+NK+DF+STRIKE+SS+TOP+K (3).avif",
+      "Images/AS+W+NK+DF+STRIKE+SS+TOP+K (4).avif",
+      "Images/AS+W+NK+DF+STRIKE+SS+TOP+K (5).avif"
+    ],
+    "sizes": ["6", "7", "8", "9"],
+    "colors": ["White", "Pink", "Black"]
+  },
+  {
+    "id": 22,
+    "name": "Nike Universa",
+    "price":  5495.00,
+    "category": "women",
+    "type": "clothing",
+    "images": [
+      "Images/AS+W+NK+DF+UNVRSA+HR+7_8+TGHT.avif",
+      "Images/AS+W+NK+DF+UNVRSA+HR+7_8+TGHT (1).avif",
+      "Images/AS+W+NK+DF+UNVRSA+HR+7_8+TGHT (2).avif",
+      "Images/AS+W+NK+DF+UNVRSA+HR+7_8+TGHT (3).avif",
+      "Images/AS+W+NK+DF+UNVRSA+HR+7_8+TGHT (4).avif",
+      "Images/AS+W+NK+DF+UNVRSA+HR+7_8+TGHT (5).avif"
+    ],
+    "sizes": ["6", "7", "8", "9"],
+    "colors": ["White", "Black"]
+  },
+  {
+    "id": 23,
+    "name": "Nike Sportswear Everything Wovens",
+    "price": 4995.00,
+    "category": "women",
+    "type": "clothing",
+    "images": [
+      "Images/AS+W+NSW+TREND+WVN+MR+PANT.avif",
+      "Images/AS+W+NSW+TREND+WVN+MR+PANT (1).avif",
+      "Images/AS+W+NSW+TREND+WVN+MR+PANT (2).avif",
+      "Images/AS+W+NSW+TREND+WVN+MR+PANT (3).avif",
+      "Images/AS+W+NSW+TREND+WVN+MR+PANT (4).avif",
+      "Images/AS+W+NSW+TREND+WVN+MR+PANT (5).avif",
+      "Images/AS+W+NSW+TREND+WVN+MR+PANT (6).avif",
+      "Images/AS+W+NSW+TREND+WVN+MR+PANT (7).avif"
+    ],
+    "sizes": ["6", "7", "8", "9"],
+    "colors": ["Black"]
+  },
+
+
+ {
+    "id":24 ,
+    "name": "Nike Zoom Vomero 5",
+    "price": 15995.00 ,
+    "category": "women",
+    "type": "shoes",
+    "images": [
+      "Images/W+NIKE+ZOOM+VOMERO+5.avif",
+      "Images/W+NIKE+ZOOM+VOMERO+5 (1).avif",
+      "Images/W+NIKE+ZOOM+VOMERO+5 (2).avif",
+      "Images/W+NIKE+ZOOM+VOMERO+5 (3).avif",
+      "Images/W+NIKE+ZOOM+VOMERO+5 (4).avif",
+      "Images/W+NIKE+ZOOM+VOMERO+5 (5).avif",
+      "Images/W+NIKE+ZOOM+VOMERO+5 (6).avif",
+      "Images/W+NIKE+ZOOM+VOMERO+5 (7).avif"
+    ],
     "sizes": ["S", "M", "L"],
     "colors": ["Red", "Black", "White"]
   },
+   {
+    "id":25 ,
+    "name": "Nike Run Defy",
+    "price": 3995.00,
+    "category": "women",
+    "type": "shoes",
+    "images": [
+      "Images/W+NIKE+RUN+DEFY.avif",
+      "Images/W+NIKE+RUN+DEFY (1).avif",
+      "Images/W+NIKE+RUN+DEFY (2).avif",
+      "Images/W+NIKE+RUN+DEFY (3).avif",
+      "Images/W+NIKE+RUN+DEFY (4).avif",
+      "Images/W+NIKE+RUN+DEFY (5).avif",
+      "Images/W+NIKE+RUN+DEFY (6).avif"
+    ],
+    "sizes": ["S", "M", "L"],
+    "colors": ["Red", "Black", "White"]
+  },
+ {
+    "id":26 ,
+    "name": "Nike Court Vision Low Next Nature",
+    "price":  4995.00 ,
+    "category": "women",
+    "type": "shoes",
+    "images": [
+       "Images/W+NIKE+COURT+VISION+LO+NN.avif",
+      "Images/W+NIKE+COURT+VISION+LO+NN (1).avif",
+      "Images/W+NIKE+COURT+VISION+LO+NN (2).avif",
+      "Images/W+NIKE+COURT+VISION+LO+NN (3).avif",
+      "Images/W+NIKE+COURT+VISION+LO+NN (4).avif",
+      "Images/W+NIKE+COURT+VISION+LO+NN (5).avif",
+      "Images/W+NIKE+COURT+VISION+LO+NN (6).avif"
+    ],
+    "sizes": ["S", "M", "L"],
+    "colors": ["Red", "Black", "White"]
+  },
+{
+    "id":27 ,
+    "name": "Nike Dunk Low Next Nature",
+    "price": 8295.00 ,
+    "category": "women",
+    "type": "shoes",
+    "images": [
+      "Images/W+NIKE+DUNK+LOW+NEXT+NATURE.avif",
+      "Images/W+NIKE+DUNK+LOW+NEXT+NATURE (1).avif",
+      "Images/W+NIKE+DUNK+LOW+NEXT+NATURE (2).avif",
+      "Images/W+NIKE+DUNK+LOW+NEXT+NATURE (3).avif",
+      "Images/W+NIKE+DUNK+LOW+NEXT+NATURE (4).avif",
+      "Images/W+NIKE+DUNK+LOW+NEXT+NATURE (5).avif",
+      "Images/W+NIKE+DUNK+LOW+NEXT+NATURE (6).avif",
+      "Images/W+NIKE+DUNK+LOW+NEXT+NATURE (7).avif"
+    ],
+    "sizes": ["S", "M", "L"],
+    "colors": ["Red", "Black", "White"]
+  },
+{
+    "id": 28,
+    "name": "Nike Calm",
+    "price": 7095.00,
+    "category": "women",
+    "type": "shoes",
+    "images": [
+      "Images/NIKE+CALM+SANDAL.avif",
+      "Images/NIKE+CALM+SANDAL (1).avif",
+      "Images/NIKE+CALM+SANDAL (2).avif",
+      "Images/NIKE+CALM+SANDAL (3).avif",
+      "Images/NIKE+CALM+SANDAL (4).avif",
+      "Images/NIKE+CALM+SANDAL (5).avif",
+      "Images/NIKE+CALM+SANDAL (6).avif"
+    ],
+    "sizes": ["S", "M", "L"],
+    "colors": ["Red", "Black", "White"]
+  },
+  {
+    "id":29 ,
+    "name": "Nike SB Alleyoop",
+    "price": 6495.00 ,
+    "category": "women",
+    "type": "shoes",
+    "images": [
+      "Images/NIKE+SB+ALLEYOOP.avif",
+      "Images/NIKE+SB+ALLEYOOP (1).avif",
+      "Images/NIKE+SB+ALLEYOOP (2).avif",
+      "Images/NIKE+SB+ALLEYOOP (3).avif",
+      "Images/NIKE+SB+ALLEYOOP (4).avif",
+      "Images/NIKE+SB+ALLEYOOP (5).avif",
+      "Images/NIKE+SB+ALLEYOOP (6).avif"
+    ],
+    "sizes": ["S", "M", "L"],
+    "colors": ["Red", "Black", "White"]
+  },
+  {
+    "id": 30,
+    "name": "Nike Metcon 10",
+    "price": 13995.00,
+    "category": "women",
+    "type": "shoes",
+    "images": [
+      "Images/W+NIKE+METCON+10.avif",
+      "Images/W+NIKE+METCON+10 (2).avif",
+      "Images/W+NIKE+METCON+10 (3).avif",
+      "Images/W+NIKE+METCON+10 (4).avif",
+      "Images/W+NIKE+METCON+10 (5).avif",
+      "Images/W+NIKE+METCON+10 (6).avif"
+    ],
+    "sizes": ["S", "M", "L"],
+    "colors": ["Red", "Black", "White"]
+  },
+
+
+
+
+
+
+
   {
     "id": 9,
     "name": "Nike Kids Sneakers",
@@ -380,6 +598,14 @@
     "sizes": ["S", "M", "L"],
     "colors": ["Black", "Blue"]
   },
+
+
+
+
+
+
+
+
   {
     "id": 12,
     "name": "Nike Sneaker Pro",
